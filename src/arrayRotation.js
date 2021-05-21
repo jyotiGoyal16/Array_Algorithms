@@ -22,6 +22,27 @@ function rotateArray1(arr, d, n) {
   return arr;
 }
 
+//Method 2: Rotate array one by one, d times O(n * d)
+function rotateArray2(arr, d, n) {
+  if (d > n) return arr;
+  for (let i = 0; i < d; i++) {
+    rotateArrayByOne(arr, n);
+  }
+  return arr;
+}
+
+//function to rotate array by 1 element
+function rotateArrayByOne(arr, n) {
+  let swap;
+  for (let i = 0; i < n - 1; i++) {
+    swap = arr[i];
+    arr[i] = arr[i + 1];
+    arr[i + 1] = swap;
+  }
+}
+
 const arr = [1, 2, 3, 4, 5, 6, 7];
-const rotatedArray = rotateArray1(arr, 2, arr.length);
-console.log(rotatedArray);
+const rotatedArray1 = rotateArray1(arr, 2, arr.length);
+const rotatedArray2 = rotateArray2(arr, 3, arr.length);
+console.log(rotatedArray1);
+console.log(rotatedArray2);
