@@ -1,4 +1,9 @@
-//Given a sorted array which is rotated by k elements. Find the index of the given element in the rotated array
+/* Given a sorted array which is rotated by k elements. Find the index of the given element in the rotated array.
+
+-------------------------------------------OR---------------------------------------------
+
+Bitonic search: An array is bitonic if it is comprised of an increasing sequence of integers followed immediately by a decreasing sequence of integers. 
+Given a bitonic array how to find a given number K */
 
 //Using two pass- first find the pivot (this is index for which the next element is smaller than the current element)
 //second, divide the array into two sub arrays and call binary search on them
